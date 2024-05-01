@@ -7,14 +7,17 @@ authors = ["Artem Basalaev <basa62.1996@gmail.com>"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-kube = { version = "0.90", features = ["runtime", "derive"] }
-k8s-openapi = { version = "0.21", features = ["v1_28"] }
+kube = { version = "0.90.0", features = ["runtime", "derive"] }
+k8s-openapi = { version = "0.21.1", features = ["v1_28"] }
 tokio = { version = "1.37.0", features = ["macros", "rt-multi-thread", "signal"] }
-futures = "0.3"
-anyhow = "1"
+futures = "0.3.30"
+anyhow = "1.0.82"
 tracing-subscriber = "0.3.18"
-serde = { version = "1", features = ["derive"] }
-serde_json = "1"
-serde_yaml = "0.9"
-schemars = "0.8"
+serde = { version = "1.0.200", features = ["derive"] }
+serde_json = "1.0.116"
+serde_yaml = "0.9.34"
+schemars = "0.8.17"
 log = "0.4.21"
+tracing = "0.1.40"
+either = "1.11.0"
+garde = { version = "0.18.0", features = ["derive"] }
