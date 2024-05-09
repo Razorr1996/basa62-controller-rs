@@ -78,7 +78,7 @@ async fn main() -> Result<()> {
         Ok(o) => {
             info!("Created {} ({:?})", o.name_any(), o.status.unwrap());
             debug!("Created CRD: {:?}", o.spec);
-        }
+        },
         Err(kube::Error::Api(ae)) => assert_eq!(ae.code, 409), // if you skipped delete, for instance
         Err(e) => return Err(e.into()),                        // any other case is probably bad
     }
@@ -90,14 +90,11 @@ async fn main() -> Result<()> {
 
     // Create Foo baz
     info!("Creating Foo instance baz");
-    let f1 = Foo::new(
-        "baz",
-        FooSpec {
-            name: "baz".into(),
-            info: "old baz".into(),
-            replicas: 1,
-        },
-    );
+    let f1 = Foo::new("baz", FooSpec {
+        name: "baz".into(),
+        info: "old baz".into(),
+        replicas: 1,
+    });
     let o = foos.create(&pp, &f1).await?;
     assert_eq!(ResourceExt::name_any(&f1), ResourceExt::name_any(&o));
     info!("Created {}", o.name_any());
@@ -131,14 +128,11 @@ async fn main() -> Result<()> {
 
     // Create Foo qux with status
     info!("Create Foo instance qux");
-    let f2 = Foo::new(
-        "qux",
-        FooSpec {
-            name: "qux".into(),
-            replicas: 0,
-            info: "unpatched qux".into(),
-        },
-    );
+    let f2 = Foo::new("qux", FooSpec {
+        name: "qux".into(),
+        replicas: 0,
+        info: "unpatched qux".into(),
+    });
 
     let o = foos.create(&pp, &f2).await?;
     info!("Created {}", o.name_any());
@@ -215,14 +209,11 @@ async fn main() -> Result<()> {
 
     // Check that validation is being obeyed
     info!("Verifying validation rules");
-    let fx = Foo::new(
-        "x",
-        FooSpec {
-            name: "x".into(),
-            info: "failing validation obj".into(),
-            replicas: 1,
-        },
-    );
+    let fx = Foo::new("x", FooSpec {
+        name: "x".into(),
+        info: "failing validation obj".into(),
+        replicas: 1,
+    });
     // using derived Validate rules locally:
     assert!(fx.spec.validate(&()).is_err());
     // check rejection from apiserver (validation rules embedded in JsonSchema)
@@ -232,7 +223,7 @@ async fn main() -> Result<()> {
             assert!(ae
                 .message
                 .contains("spec.name in body should be at least 3 chars long"));
-        }
+        },
         Err(e) => bail!("somehow got unexpected error from validation: {:?}", e),
         Ok(o) => bail!("somehow created {:?} despite validation", o),
     }
@@ -243,10 +234,10 @@ async fn main() -> Result<()> {
         Left(list) => {
             let deleted: Vec<_> = list.iter().map(ResourceExt::name_any).collect();
             info!("Deleting collection of foos: {:?}", deleted);
-        }
+        },
         Right(status) => {
             info!("Deleted collection of crds: status={:?}", status);
-        }
+        },
     }
 
     // Cleanup the CRD definition
@@ -257,10 +248,10 @@ async fn main() -> Result<()> {
                 o.name_any(),
                 o.status.unwrap().conditions.unwrap().last()
             );
-        }
+        },
         Right(status) => {
             info!("Deleted foos CRD definition: status={:?}", status);
-        }
+        },
     }
 
     Ok(())

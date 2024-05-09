@@ -85,7 +85,7 @@ async fn main() -> anyhow::Result<()> {
                     .await?;
 
                 info!("Applied 2 {}: {:?}", applied2.name_any(), applied2.spec);
-            }
+            },
         }
     }
 
