@@ -1,0 +1,7 @@
+apiVersion: basa62.com/v1
+kind: HelloApp
+metadata:
+  name: example
+spec:
+  image: nginx:latest
+  replicas: 1

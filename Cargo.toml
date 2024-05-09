@@ -5,7 +5,24 @@ edition = "2021"
 authors = ["Artem Basalaev <basa62.1996@gmail.com>"]
 rust-version = "1.78"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+doc = false
+name = "controller"
+path = "src/main.rs"
+
+[[bin]]
+doc = false
+name = "crdgen"
+path = "src/crdgen.rs"
+
+[[bin]]
+doc = false
+name = "example"
+path = "src/example.rs"
+
+[lib]
+name = "basa62_controller"
+path = "src/lib.rs"
 
 [dependencies]
 kube = { version = "0.91.0", features = ["runtime", "derive"] }

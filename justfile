@@ -5,3 +5,6 @@ default:
 # format with nightly rustfmt
 fmt:
     cargo +nightly fmt
+
+generate:
+    cargo run --bin crdgen > yaml/crd.yaml

@@ -1,0 +1,50 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: helloapps.basa62.com
+spec:
+  group: basa62.com
+  names:
+    categories: [ ]
+    kind: HelloApp
+    plural: helloapps
+    shortNames: [ ]
+    singular: helloapp
+  scope: Namespaced
+  versions:
+    - additionalPrinterColumns: [ ]
+      name: v1
+      schema:
+        openAPIV3Schema:
+          description: Auto-generated derived type for HelloAppSpec via `CustomResource`
+          properties:
+            spec:
+              properties:
+                image:
+                  type: string
+                replicas:
+                  format: uint32
+                  minimum: 0.0
+                  type: integer
+              required:
+                - image
+                - replicas
+              type: object
+            status:
+              nullable: true
+              properties:
+                replicas:
+                  format: uint32
+                  minimum: 0.0
+                  type: integer
+              required:
+                - replicas
+              type: object
+          required:
+            - spec
+          title: HelloApp
+          type: object
+      served: true
+      storage: true
+      subresources:
+        status: { }
