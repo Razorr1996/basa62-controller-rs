@@ -6,5 +6,5 @@ fn main() {
         replicas: 1,
     });
 
-    println!("{}", serde_yaml::to_string(&app).unwrap())
+    print!("{}", serde_yaml::to_string(&app).unwrap())
 }

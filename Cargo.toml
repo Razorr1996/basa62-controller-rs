@@ -37,3 +37,4 @@ log = "0.4.21"
 tracing = "0.1.40"
 either = "1.11.0"
 garde = { version = "0.18.0", features = ["derive"] }
+num-traits = "0.2.19"

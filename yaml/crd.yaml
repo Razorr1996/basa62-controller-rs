@@ -24,12 +24,12 @@ spec:
               image:
                 type: string
               replicas:
+                default: 1
                 format: uint32
                 minimum: 0.0
                 type: integer
             required:
             - image
-            - replicas
             type: object
           status:
             nullable: true
@@ -49,4 +49,3 @@ spec:
     storage: true
     subresources:
       status: {}
-
