@@ -3,7 +3,13 @@ use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 
 #[derive(CustomResource, Deserialize, Serialize, Clone, Debug, JsonSchema)]
-#[kube(kind = "HelloApp", group = "basa62.com", version = "v1", namespaced)]
+#[kube(
+    kind = "HelloApp",
+    group = "basa62.com",
+    version = "v1",
+    shortname = "ha",
+    namespaced
+)]
 #[kube(status = "HelloAppStatus")]
 pub struct HelloAppSpec {
     pub image: String,

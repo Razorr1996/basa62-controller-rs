@@ -5,3 +5,4 @@ metadata:
 spec:
   image: nginx:latest
   replicas: 1
+
