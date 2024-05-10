@@ -13,3 +13,7 @@ generate:
 # format with nightly rustfmt
 fmt:
     cargo +nightly fmt
+
+unused-features:
+    unused-features analyze
+    unused-features build-report
