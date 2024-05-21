@@ -7,5 +7,25 @@ version: 2
 updates:
 - package-ecosystem: "cargo" # See documentation for possible values
   directory: "/" # Location of package manifests
+  groups:
+    kube:
+      patterns:
+      - "kube"
+      - "k8s-openapi"
+    logs:
+      patterns:
+      - "log"
+      - "tracing"
+      - "tracing-subscriber"
+    schema:
+      patterns:
+      - "serde"
+      - "serde_json"
+      - "serde_derive"
+      - "schemars"
+      - "garde"
   schedule:
     interval: "weekly"
+    day: friday
+    time: "16:00"
+    timezone: "Europe/Belgrade"
