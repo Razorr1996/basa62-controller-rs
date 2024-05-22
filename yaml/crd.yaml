@@ -13,7 +13,15 @@ spec:
     singular: helloapp
   scope: Namespaced
   versions:
-  - additionalPrinterColumns: []
+  - additionalPrinterColumns:
+    - description: Image name[:tag]
+      jsonPath: .spec.image
+      name: Image
+      type: string
+    - description: Count of replicas
+      jsonPath: .spec.replicas
+      name: Replicas
+      type: string
     name: v1
     schema:
       openAPIV3Schema:
