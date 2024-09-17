@@ -1,10 +1,13 @@
 [private]
-default:
+default: list-recipes fmt generate
+
+[private]
+list-recipes:
     @just --list --unsorted
 
 # install crd into the cluster
-install-crd: generate
-    kubectl apply -f yaml/crd.yaml
+install-crd context='minikube': generate
+    kubectl --context {{context}} apply -f yaml/crd.yaml
 
 # generate yaml files for CRD and example instance
 generate:
