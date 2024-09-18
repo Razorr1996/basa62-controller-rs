@@ -12,12 +12,18 @@ use serde::{Deserialize, Serialize};
     namespaced
 )]
 #[kube(status = "HelloAppStatus")]
-#[kube(
-    printcolumn = r#"{"name":"Image", "type":"string", "description":"Image name[:tag]", "jsonPath":".spec.image"}"#
-)]
-#[kube(
-    printcolumn = r#"{"name":"Replicas", "type":"string", "description":"Count of replicas", "jsonPath":".spec.replicas"}"#
-)]
+#[kube(printcolumn = r#"{
+  "name": "Image",
+  "type": "string",
+  "description": "Image name[:tag]",
+  "jsonPath": ".spec.image"
+}"#)]
+#[kube(printcolumn = r#"{
+  "name": "Replicas",
+  "type": "string",
+  "description": "Count of replicas",
+  "jsonPath": ".spec.replicas"
+}"#)]
 pub struct HelloAppSpec {
     pub image: String,
     #[serde(default = "u32::one")]
