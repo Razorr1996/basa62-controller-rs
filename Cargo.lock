@@ -514,9 +514,9 @@ dependencies = [
 
 [[package]]
 name = "garde"
-version = "0.21.1"
+version = "0.22.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f4bd1d7843e437a4caf1d6a9112ba1ee9635b09d909af22aa4e6ec01fe971e22"
+checksum = "6a989bd2fd12136080f7825ff410d9239ce84a2a639487fc9d924ee42e2fb84f"
 dependencies = [
  "compact_str",
  "garde_derive",
@@ -525,9 +525,9 @@ dependencies = [
 
 [[package]]
 name = "garde_derive"
-version = "0.21.1"
+version = "0.22.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a0636cbdc03994db48fc89a0ce7765bd68d08bd8a7a68cb9a36bcde96790f413"
+checksum = "1f7f0545bbbba0a37d4d445890fa5759814e0716f02417b39f6fab292193df68"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1454,9 +1454,9 @@ dependencies = [
 
 [[package]]
 name = "serde"
-version = "1.0.217"
+version = "1.0.218"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "02fc4265df13d6fa1d00ecff087228cc0a2b5f3c0e87e258d8b94a156e984c70"
+checksum = "e8dfc9d19bdbf6d17e22319da49161d5d0108e4188e8b680aef6299eed22df60"
 dependencies = [
  "serde_derive",
 ]
@@ -1473,9 +1473,9 @@ dependencies = [
 
 [[package]]
 name = "serde_derive"
-version = "1.0.217"
+version = "1.0.218"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5a9bf7cf98d04a2b28aead066b7496853d4779c9cc183c440dbac457641e19a0"
+checksum = "f09503e191f4e797cb8aac08e9a4a4695c5edf6a2e70e376d961ddd5c969f82b"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1495,9 +1495,9 @@ dependencies = [
 
 [[package]]
 name = "serde_json"
-version = "1.0.135"
+version = "1.0.139"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2b0d7ba2887406110130a978386c4e1befb98c674b4fba677954e4db976630d9"
+checksum = "44f86c3acccc9c65b153fe1b85a3be07fe5515274ec9f0653b4a0875731c72a6"
 dependencies = [
  "itoa",
  "memchr",
