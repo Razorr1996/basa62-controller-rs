@@ -35,6 +35,6 @@ serde_yaml = "0.9.34"
 schemars = "0.8.22"
 log = "0.4.26"
 tracing = "0.1.41"
-either = "1.14.0"
+either = "1.15.0"
 garde = { version = "0.22.0", features = ["derive"] }
 num-traits = "0.2.19"
