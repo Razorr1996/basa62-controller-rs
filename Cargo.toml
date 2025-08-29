@@ -28,7 +28,7 @@ k8s-openapi = { version = "0.25.0", features = ["latest"] }
 tokio = { version = "1.47.1", features = ["macros", "rt-multi-thread", "signal"] }
 futures = "0.3.31"
 anyhow = "1.0.99"
-tracing-subscriber = "0.3.19"
+tracing-subscriber = "0.3.20"
 serde = { version = "1.0.219", features = ["derive"] }
 serde_json = "1.0.143"
 serde_yaml = "0.9.34"
