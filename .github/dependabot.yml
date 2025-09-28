@@ -25,7 +25,7 @@ updates:
       - "schemars"
       - "garde"
   schedule:
-    interval: weekly
+    interval: monthly
     day: saturday
     time: "08:00"
     timezone: Europe/Belgrade
